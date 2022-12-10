@@ -4,10 +4,14 @@ import {BrowserRouter as Router, Routes, Route, redirect} from 'react-router-dom
 import PageRenderer from './page-renderer';
 
 function App() {
+  const user = {
+    firstName: "Michael",
+    lastName: "Bunton"
+  }
   return (
     <Router>
     <div className="App">
-      <Navigation/>
+      <Navigation user={user}/>
       <Routes>
         <Route path="/:page" component={PageRenderer}/>
         <Route path="/" render={() => <redirect to="/home" />} />
